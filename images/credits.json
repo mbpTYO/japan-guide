@@ -124,5 +124,26 @@
   "license": "CC BY-SA 4.0",
   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
   "source": "https://commons.wikimedia.org/wiki/File:Double_torii_path_at_Fushimi_Inari_Taisha_Shrine,_Kyoto,_Japan.jpg"
+ },
+ "card-hotel-1.jpg": {
+  "title": "File:Ryokan Matsumae in Nara.jpg",
+  "artist": "Mx. Granger",
+  "license": "CC0",
+  "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "source": "https://commons.wikimedia.org/wiki/File:Ryokan_Matsumae_in_Nara.jpg"
+ },
+ "card-manners-1.jpg": {
+  "title": "File:Genkan-M9778.jpg",
+  "artist": "Fg2",
+  "license": "Public domain",
+  "license_url": "",
+  "source": "https://commons.wikimedia.org/wiki/File:Genkan-M9778.jpg"
+ },
+ "card-food-1.jpg": {
+  "title": "File:定食 - traditional Japanese set meal at New Chitose Airport (97).jpg",
+  "artist": "Savannah Rivka",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:%E5%AE%9A%E9%A3%9F_-_traditional_Japanese_set_meal_at_New_Chitose_Airport_(97).jpg"
  }
 }
