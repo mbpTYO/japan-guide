@@ -15,11 +15,20 @@
     h2 { font-size: 2rem }
     header p { margin: 0 }
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: 1.2rem }
-    article, a.article { position: relative; padding: 1.3rem; background: #fffcf5; border: 1px solid #c9c8b7; border-radius: .45rem }
+    article, a.article { position: relative; padding: 1.3rem; background: #fffcf5; border: 1px solid #c9c8b7; border-radius: .45rem; transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease }
     a.article { display: block; color: inherit; text-decoration: none }
-    a.article:hover, a.article:focus-visible { border-color: #98402b; box-shadow: 0 2px 0 #98402b }
+    article:hover, a.article:hover, a.article:focus-visible { border-color: #98402b; box-shadow: 0 10px 20px rgba(35,59,56,.16); transform: translateY(-4px) }
     a.article:focus-visible { outline: 2px solid #98402b; outline-offset: 2px }
+    .topic { display: flex; flex-direction: column }
+    .topic > .article { flex: 1 }
+    .topic:nth-child(odd) svg { background: #e5ecdf }
+    .topic:nth-child(even) svg { background: #f5e6d5 }
     .more { display: inline-block; margin-top: .8rem; color: #98402b; font-size: .85rem; font-weight: 700 }
+    .more.soon { color: #7b7a6f }
+    .related { margin: .6rem 0 0; font-size: .78rem; line-height: 1.5; color: #495952 }
+    .related b { color: #233b38 }
+    .related a { color: #29534c; text-decoration: underline; text-underline-offset: 2px }
+    .related a:hover { color: #98402b }
     svg { display: block; width: 100%; height: 7.5rem; margin-bottom: 1rem; background: #e5ecdf; border-radius: .2rem; color: #29534c }
     article:nth-child(even) svg, a.article:nth-child(even) svg { background: #f5e6d5 }
     .number { position: absolute; top: 1.75rem; left: 1.9rem; font: bold .8rem monospace; color: #495952 }
@@ -106,45 +115,65 @@
     </ol>
 </section>
     <div class="grid">
-    <article>
-      <span class="number">01</span>
-      <svg viewBox="0 0 200 120" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linejoin="round">
-        <path d="m79 94-17 20m59-20 17 20m-67-10h58" fill="none"/>
-        <rect x="63" y="14" width="74" height="83" rx="13" fill="#fffcf5"/><rect x="71" y="33" width="58" height="33" rx="4" fill="#b8d4cf"/><path d="M100 33v33M84 24h32"/>
-        <path d="M65 73h70" stroke="#bd583d" stroke-width="6"/><circle cx="78" cy="86" r="3"/><circle cx="122" cy="86" r="3"/>
-      </svg>
-      <h2>Trains <span lang="ja">電車</span></h2>
-      <p>Check the line and destination before boarding. At gates that accept IC cards, tap the same card when you enter and leave.</p>
-      <p lang="ja">乗る前に路線と行き先を確認しましょう。ICカード対応の改札では、入るときも出るときも同じカードをタッチします。</p>
-    </article>
-    <article>
-      <span class="number">02</span>
-      <svg viewBox="0 0 200 120" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linejoin="round">
-        <path d="M42 97V45h8v30h104v22m-112-9h112" fill="#be8362"/><rect x="50" y="59" width="104" height="17" rx="5" fill="#fffcf5"/><path d="M81 59h62q11 0 11 11v6H81Z" fill="#85ada0"/><rect x="52" y="51" width="25" height="9" rx="4" fill="#fffcf5"/>
-        <path d="M120 19h29v26h-29z" fill="#fffcf5"/><path d="m122 42 10-12 7 7 4-4 5 8" fill="#b8d4cf"/>
-      </svg>
-      <h2>Hotels <span lang="ja">ホテル</span></h2>
-      <p>Check your arrival and checkout times in your booking. If you arrive early, ask the front desk if they can hold your bags.</p>
-      <p lang="ja">予約内容でチェックイン・チェックアウトの時間を確認しましょう。早く着いたら、荷物を預けられるかフロントで聞いてみましょう。</p>
-    </article>
-    <article>
-      <span class="number">03</span>
-      <svg viewBox="0 0 200 120" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linejoin="round">
-        <path d="M37 90h52v-9h74" fill="none"/><g fill="#bf7758"><path d="M58 67V48q6 5 13 2l13 11 12 3v7H58Z"/><path d="M87 57V38q6 5 13 2l13 11 12 3v7H87Z"/></g><path d="M58 67h38m-9-10h38" fill="none"/>
-      </svg>
-      <h2>Etiquette <span lang="ja">マナー</span></h2>
-      <p>Take off your shoes at the entrance to someone’s home. In restaurants and inns, look for a shoe rack or ask the staff.</p>
-      <p lang="ja">人の家では玄関で靴を脱ぎます。飲食店や旅館では、靴箱があるか確認するか、スタッフに聞いてみましょう。</p>
-    </article>
-    <article>
-      <span class="number">04</span>
-      <svg viewBox="0 0 200 120" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linejoin="round">
-        <path d="m103 62 39-47m-31 48 40-45" fill="none"/><path d="M52 58h96q-6 34-38 40v5H90v-5Q59 92 52 58Z" fill="#fffcf5"/><ellipse cx="100" cy="58" rx="48" ry="8" fill="#d2a16e"/><path d="M58 72q42 12 84 0" fill="none" stroke="#b9573d" stroke-width="5"/><path d="M77 44q-7-7 0-13t0-12m14 25q-7-7 0-13" fill="none" stroke="#849c92"/>
-      </svg>
-      <h2>Dining <span lang="ja">食事</span></h2>
-      <p>If you have a food allergy, tell the staff before ordering. To ask for the bill, say “Okaikei onegaishimasu.”</p>
-      <p lang="ja">食物アレルギーがある場合は、注文前にお店の人に伝えましょう。支払いのときは「お会計お願いします」と言います。</p>
-    </article>
+    <div class="topic">
+      <a class="article" href="pages/train-transfer.html">
+        <span class="number">01</span>
+        <svg viewBox="0 0 200 120" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linejoin="round">
+          <path d="m79 94-17 20m59-20 17 20m-67-10h58" fill="none"/>
+          <rect x="63" y="14" width="74" height="83" rx="13" fill="#fffcf5"/><rect x="71" y="33" width="58" height="33" rx="4" fill="#b8d4cf"/><path d="M100 33v33M84 24h32"/>
+          <path d="M65 73h70" stroke="#bd583d" stroke-width="6"/><circle cx="78" cy="86" r="3"/><circle cx="122" cy="86" r="3"/>
+        </svg>
+        <h2>Trains <span lang="ja">電車</span></h2>
+        <p>Check the line and destination before boarding. At gates that accept IC cards, tap the same card when you enter and leave.</p>
+        <p lang="ja">乗る前に路線と行き先を確認しましょう。ICカード対応の改札では、入るときも出るときも同じカードをタッチします。</p>
+        <span class="more">Read more → / <span lang="ja">記事を読む</span></span>
+      </a>
+      <p class="related"><b>Related / 関連記事:</b>
+        <a href="pages/ic-card.html">IC Cards</a> ·
+        <a href="pages/train-transfer.html">Changing Trains</a> ·
+        <a href="pages/shinkansen.html">Shinkansen</a> ·
+        <a href="pages/private-railway.html">Private Railway Maps</a> ·
+        <a href="pages/taxi.html">Taxis</a> ·
+        <a href="pages/local-bus.html">Local Buses</a>
+      </p>
+    </div>
+    <div class="topic">
+      <div class="article">
+        <span class="number">02</span>
+        <svg viewBox="0 0 200 120" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linejoin="round">
+          <path d="M42 97V45h8v30h104v22m-112-9h112" fill="#be8362"/><rect x="50" y="59" width="104" height="17" rx="5" fill="#fffcf5"/><path d="M81 59h62q11 0 11 11v6H81Z" fill="#85ada0"/><rect x="52" y="51" width="25" height="9" rx="4" fill="#fffcf5"/>
+          <path d="M120 19h29v26h-29z" fill="#fffcf5"/><path d="m122 42 10-12 7 7 4-4 5 8" fill="#b8d4cf"/>
+        </svg>
+        <h2>Hotels <span lang="ja">ホテル</span></h2>
+        <p>Check your arrival and checkout times in your booking. If you arrive early, ask the front desk if they can hold your bags.</p>
+        <p lang="ja">予約内容でチェックイン・チェックアウトの時間を確認しましょう。早く着いたら、荷物を預けられるかフロントで聞いてみましょう。</p>
+        <span class="more soon">Coming soon / <span lang="ja">準備中</span></span>
+      </div>
+    </div>
+    <div class="topic">
+      <div class="article">
+        <span class="number">03</span>
+        <svg viewBox="0 0 200 120" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linejoin="round">
+          <path d="M37 90h52v-9h74" fill="none"/><g fill="#bf7758"><path d="M58 67V48q6 5 13 2l13 11 12 3v7H58Z"/><path d="M87 57V38q6 5 13 2l13 11 12 3v7H87Z"/></g><path d="M58 67h38m-9-10h38" fill="none"/>
+        </svg>
+        <h2>Etiquette <span lang="ja">マナー</span></h2>
+        <p>Take off your shoes at the entrance to someone’s home. In restaurants and inns, look for a shoe rack or ask the staff.</p>
+        <p lang="ja">人の家では玄関で靴を脱ぎます。飲食店や旅館では、靴箱があるか確認するか、スタッフに聞いてみましょう。</p>
+        <span class="more soon">Coming soon / <span lang="ja">準備中</span></span>
+      </div>
+    </div>
+    <div class="topic">
+      <div class="article">
+        <span class="number">04</span>
+        <svg viewBox="0 0 200 120" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linejoin="round">
+          <path d="m103 62 39-47m-31 48 40-45" fill="none"/><path d="M52 58h96q-6 34-38 40v5H90v-5Q59 92 52 58Z" fill="#fffcf5"/><ellipse cx="100" cy="58" rx="48" ry="8" fill="#d2a16e"/><path d="M58 72q42 12 84 0" fill="none" stroke="#b9573d" stroke-width="5"/><path d="M77 44q-7-7 0-13t0-12m14 25q-7-7 0-13" fill="none" stroke="#849c92"/>
+        </svg>
+        <h2>Dining <span lang="ja">食事</span></h2>
+        <p>If you have a food allergy, tell the staff before ordering. To ask for the bill, say “Okaikei onegaishimasu.”</p>
+        <p lang="ja">食物アレルギーがある場合は、注文前にお店の人に伝えましょう。支払いのときは「お会計お願いします」と言います。</p>
+        <span class="more soon">Coming soon / <span lang="ja">準備中</span></span>
+      </div>
+    </div>
     <a class="article" href="pages/ic-card.html">
       <span class="number">05</span>
       <svg viewBox="0 0 200 120" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linejoin="round">
